@@ -5,7 +5,7 @@ from decompilation_method import S4PyDecompilationMethod
 # Example:
 # If I set the value to "ColonolNutty"
 # compiling my scripts would output a file with the name "ColonolNutty_<script_name>.ts4script"
-creator_name = ''
+creator_name = ""
 
 # If you want to decompile the EA Python Scripts:
 # 1. Change should_decompile_ea_scripts to True
@@ -22,7 +22,7 @@ should_decompile_ea_scripts: bool = True
 # 2. Change should_decompile_custom_scripts to True
 # 3. Run the decompile_scripts.py script
 # 4. It will decompile the custom scripts and put them inside of the folder: <Project>/custom_scripts_for_decompile/_decompiled/...
-should_decompile_custom_scripts: bool = True
+should_decompile_custom_scripts: bool = False
 
 
 # ---------------------------- Unless you know what you are doing, do not change anything below this line! ----------------------------
@@ -31,36 +31,45 @@ should_decompile_custom_scripts: bool = True
 # S4PyDecompilationMethod.PY37DEC is the default, however if it fails to decompile some files, feel free to change this to S4PyDecompilationMethod.UNPYC3 and try to decompile using that decompiler instead
 decompile_method_name = S4PyDecompilationMethod.PY37DEC
 
-custom_scripts_for_decompile_source: str = './custom_scripts_for_decompile'
-custom_scripts_for_decompile_destination: str = './custom_scripts_for_decompile'
+custom_scripts_for_decompile_source: str = "./custom_scripts_for_decompile"
+custom_scripts_for_decompile_destination: str = "./custom_scripts_for_decompile"
 
 if should_decompile_ea_scripts:
     decompile_method_name = S4PyDecompilationMethod.UNPYC3
     should_decompile_custom_scripts = False
 
 # If this path is not correct, change it to your Mods folder location instead.
-if os.name != 'nt':
+if os.name != "nt":
     # Mac
-    mods_folder = os.path.join(os.environ['HOME'], 'Documents', 'Electronic Arts', 'The Sims 4', 'Mods')
-    print(f'Mods folder path: {mods_folder}')
+    mods_folder = os.path.join(
+        os.environ["HOME"], "Documents", "Electronic Arts", "The Sims 4", "Mods"
+    )
+    print(f"Mods folder path: {mods_folder}")
 else:
     # Windows
-    mods_folder = os.path.join(os.environ['USERPROFILE'], 'Documents', 'Electronic Arts', 'The Sims 4', 'Mods')
-    print(f'Mods folder path: {mods_folder}')
+    mods_folder = os.path.join(
+        os.environ["USERPROFILE"], "Documents", "Electronic Arts", "The Sims 4", "Mods"
+    )
+    print(f"Mods folder path: {mods_folder}")
 
 # Location of the game's zipped binary scripts (base.zip, core.zip and simulation.zip)
 # If this path is not found properly when trying to decompile, change it to the location where you have installed The Sims 4 at, this would be the folder that contains the GameVersion.txt file
-if os.name != 'nt':
+if os.name != "nt":
     # Mac
-    game_folder = os.path.join(os.environ['HOME'], 'Applications', 'The Sims 4.app', 'Contents')
-    print(f'Game folder path: {game_folder}')
+    game_folder = os.path.join(
+        os.environ["HOME"], "Applications", "The Sims 4.app", "Contents"
+    )
+    print(f"Game folder path: {game_folder}")
 else:
     # noinspection PyBroadException
     try:
         # Windows
         import winreg as winreg
-        key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, 'SOFTWARE\\Maxis\\The Sims 4')
-        (game_folder, _) = winreg.QueryValueEx(key, 'Install Dir')
-        print(f'Game folder path: {game_folder}')
+
+        key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, "SOFTWARE\\Maxis\\The Sims 4")
+        (game_folder, _) = winreg.QueryValueEx(key, "Install Dir")
+        print(f"Game folder path: {game_folder}")
     except:
-        raise Exception('The Sims 4 game folder was not found! Please specify one manually in settings.py.')
+        raise Exception(
+            "The Sims 4 game folder was not found! Please specify one manually in settings.py."
+        )
