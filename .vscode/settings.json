@@ -1,0 +1,12 @@
+{
+    "python.analysis.extraPaths": [
+        "./Scripts/S4CLSampleModScripts",
+        "./EA/core",
+        "./EA/generated",
+        "./EA/simulation",
+        "./EA/base",
+        "./Scripts",
+        "./ScriptLibrary/S4CL",
+        "./Utilities",
+    ]
+}
