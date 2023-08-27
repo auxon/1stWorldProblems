@@ -1,12 +1,13 @@
 {
     "python.analysis.extraPaths": [
-        "./Scripts/S4CLSampleModScripts",
+        "./Scripts/1stWorldProblems",
         "./EA/core",
         "./EA/generated",
         "./EA/simulation",
         "./EA/base",
         "./Scripts",
-        "./ScriptLibrary/S4CL",
         "./Utilities",
+        "./S4CL",
+        "./S4CL/sims4communitylib",
     ]
 }
