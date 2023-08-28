@@ -20,5 +20,5 @@
         "./Utilities",
         "./Libraries/S4CL",
         "./Libraries/S4CL/sims4communitylib",
-    ],
+    ]
 }

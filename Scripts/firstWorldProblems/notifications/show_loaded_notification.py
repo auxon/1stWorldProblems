@@ -16,7 +16,7 @@ class FirstWorldProblemsShowLoadedMessage:
         notification.show()
 
     @staticmethod
-    @CommonEventRegistry.handle_events('s4cl_sample_mod')
+    @CommonEventRegistry.handle_events('firstWorldProblems')
     def _show_loaded_notification_when_loaded(event_data: S4CLZoneLateLoadEvent):
         if event_data.game_loaded:
             # If the game has not loaded yet, we don't want to show our notification.
