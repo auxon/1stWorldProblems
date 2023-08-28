@@ -1,6 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./Scripts/1stWorldProblems",
+        "./Scripts/firstWorldProblems",
         "./EA/core",
         "./EA/generated",
         "./EA/simulation",
@@ -11,7 +11,7 @@
         "./Libraries/S4CL/sims4communitylib",
     ],
     "python.autoComplete.extraPaths": [
-        "./Scripts/1stWorldProblems",
+        "./Scripts/firstWorldProblems",
         "./EA/core",
         "./EA/generated",
         "./EA/simulation",
