@@ -7,8 +7,8 @@
         "./EA/base",
         "./Scripts",
         "./Utilities",
-        "./S4CL",
-        "./S4CL/sims4communitylib",
+        "./Libraries/S4CL",
+        "./Libraries/S4CL/sims4communitylib",
     ],
     "python.autoComplete.extraPaths": [
         "./Scripts/1stWorldProblems",
@@ -18,7 +18,7 @@
         "./EA/base",
         "./Scripts",
         "./Utilities",
-        "./S4CL",
-        "./S4CL/sims4communitylib",
+        "./Libraries/S4CL",
+        "./Libraries/S4CL/sims4communitylib",
     ],
 }

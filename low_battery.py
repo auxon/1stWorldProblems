@@ -1,6 +1,6 @@
 from sims4communitylib.events.event_handling.common_event_registry import CommonEventRegistry
 from sims4communitylib.events.zone_spin.update_tuning_event import UpdateTuningEvent
-from sims4communitylib.events.zone_spin.zone_update_event import ZoneUpdateEvent
+from sims4communitylib.events.zone_update.events.zone_update_event import S4CLZoneUpdateEvent
 from sims4communitylib.modinfo import ModInfo
 from sims4communitylib.utils.resources.common_capability_loot_actions import CommonCapabilityLootActions
 from sims4communitylib.utils.sims.common_sim_utils import CommonSimUtils
